@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mrinal's Portfolio Submission</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Mrinal's Portfolio</div>
+      <ul class="nav-links">
+        <li><a href="#info">Info</a></li>
+        <li><a href="#subject">Subject</a></li>
+        <li><a href="#elab">E-Lab</a></li>
+        <li><a href="#lab">Lab Status</a></li>
+        <li><a href="#realworld">Real World</a></li>
+        <li><a href="#hots">HOTS</a></li>
+      </ul>
+      <button id="themeToggle">🌙</button>
+    </nav>
+  </header>
+
+  <section id="info" class="section info-section">
+    <div class="info-container">
+      <div class="photo">
+        <img src="Mrinal.jpg" alt="Mrinal's Photo">
+      </div>
+      <div class="details">
+        <p><strong>Name:</strong> Mrinal Paul</p>
+        <p><strong>Register Number:</strong> RA2311033010054</p>
+        <p><strong>Mail ID:</strong> mp2126@srmist.edu.in</p>
+        <p><strong>Department:</strong> COMPUTATIONAL INTELLIGENCE</p>
+        <p><strong>Semester:</strong> IV</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="subject" class="section">
+    <h2>Subject Title: 21CSC204J Design and Analysis of Algorithm</h2>
+    <p>Handled By: <a href="https://www.srmist.edu.in/faculty/amutha-a-l/" target="_blank" class="plain-link">Dr. Amutha A.L</a></p>
+  </section>
+
+
+  <section id="elab" class="section">
+    <div class="container">
+        <h2>E-Lab Completion Status</h2>
+        <img src="elab-status.png" alt="E-Lab Status" class="full-width">
+      
+      <div class="card elab-card">
+        <h3>Problem Description</h3>
+        <p>Seetha recently graduated from University. To celebrate, she went to a McDonald's and bought all the burgers. The total amount was a number up to which there are 'n' prime numbers (starting from 2). Since Seetha wants to minimize her amount, she calls you to help her find the minimum cost that needs to be paid.</p>
+        
+        <h4>Constraints</h4>
+        <p>2 ≤ T ≤ 100</p>
+        
+        <h4>Input Format</h4>
+        <p>The first line contains a single integer denoting the number of test cases T.<br>
+        Next T lines contain a single integer N, denoting the number of primes required.</p>
+        
+        <h4>Output Format</h4>
+        <p>Print the output in separate lines to find the minimum cost that needs to be paid.</p>
+      </div>
+  
+      <div class="card elab-card">
+        <h3>Logical Test Cases</h3>
+        <div class="test-cases">
+          <div class="test-case">
+            <h4>Test Case 1</h4>
+            <p><strong>Input:</strong><br>2<br>5<br>1</p>
+            <p><strong>Expected Output:</strong><br>11<br>2</p>
+          </div>
+          <div class="test-case">
+            <h4>Test Case 2</h4>
+            <p><strong>Input:</strong><br>4<br>7<br>5<br>3<br>1</p>
+            <p><strong>Expected Output:</strong><br>17<br>11<br>5<br>2</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card elab-card">
+        <h3>Mandatory Test Case</h3>
+        <p><strong>Keyword:</strong> <code>while(t--)</code></p>
+      </div>
+  
+      <div class="card elab-card">
+        <h3>Complexity Test Cases</h3>
+        <ul>
+          <li><strong>Cyclomatic Complexity:</strong> 6</li>
+          <li><strong>Token Count:</strong> 220</li>
+          <li><strong>NLOC:</strong> 37</li>
+        </ul>
+      </div>
+  
+      <div class="card elab-card">
+        <h3>Solution</h3>
+        <pre><code class="language-cpp">
+  #include &lt;bits/stdc++.h&gt;
+  using namespace std;
+  #define MAX_SIZE 1000005
+  
+  void SieveOfEratosthenes(vector&lt;int&gt;& primes){
+      bool IsPrime[MAX_SIZE];
+      memset(IsPrime, true, sizeof(IsPrime));
+      for (int p = 2; p * p &lt; MAX_SIZE; p++) {
+          if (IsPrime[p]) {
+              for (int i = p * p; i &lt; MAX_SIZE; i += p)
+                  IsPrime[i] = false;
+          }
+      }
+      for (int p = 2; p &lt; MAX_SIZE; p++)
+          if (IsPrime[p])
+              primes.push_back(p);
+  }
+  
+  int main(){
+      vector&lt;int&gt; primes;
+      SieveOfEratosthenes(primes);
+      int t;
+      cin >> t;
+      while(t--){
+          int n;
+          cin >> n;
+          cout &lt;&lt; primes[n-1] &lt;&lt; endl;
+      }
+      return 0;
+  }
+        </code></pre>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="lab" class="section">
+    <h2>Lab Experiment Completion Status</h2>
+    <img src="lab-status.jpg" alt="Lab Status" class="full-width">
+  </section>
+
+  <section id="realworld" class="section">
+    <h2>Real World Application</h2>
+    <iframe src="realworld.pdf" width="100%" height="500px"></iframe>
+  </section>
+
+  <section id="hots" class="section">
+    <h2>HOTS Question Solution</h2>
+    <iframe src="realworld.pdf" width="100%" height="500px"></iframe>
+  </section>
+
+  <footer>
+    <p>Made by Mrinal</p>
+    <a href="https://www.srmist.edu.in/" target="_blank" class="srm-link">SRM Institute of Science and Technology</a>
+    <img src="signature.jpg" alt="Mrinal's Signature" class="signature">
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
