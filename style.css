@@ -271,175 +271,167 @@ body.dark-mode #themeToggle {
     border-radius: 8px;
     font-family: monospace;
   }
-
- /* Existing styles remain unchanged above this line */
-
-@media (max-width: 1024px) {
-  .nav-links {
-    gap: 1rem;
-  }
-
-  .info-container {
-    gap: 1.5rem;
-  }
-
-  .details p {
-    font-size: 1rem;
-  }
-
-  .photo img {
-    width: 160px;
-  }
-
-  .section {
-    padding: 2.5rem 1.5rem;
-  }
-
-  .elab-card h3 {
-    font-size: 22px;
-  }
-
-  .elab-card p,
-  .elab-card li {
-    font-size: 15px;
-  }
-
-  footer {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .srm-link {
-    font-size: 13px;
+    
+  .projects-section {
+    background: var(--bg-color);
+    padding: 60px 20px;
   }
   
-}
-
-@media (max-width: 768px) {
-  nav {
-    flex-direction: row; /* Keep everything in one line */
-    flex-wrap: wrap;
-    gap: 1rem;
+  .section-title {
     text-align: center;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 40px;
   }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    display: none;
-    background-color: #182848;
-    padding: 1rem;
-    margin-top: 1rem;
-    border-radius: 10px;
+  
+  .projects-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
-
-  .nav-links.show {
+  
+  .project-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
-
-  .logo {
-    flex-grow: 1;
-  }
-
-  .photo img {
-    width: 140px;
-  }
-
-  .details p {
-    font-size: 0.95rem;
-  }
-
-  .section h2 {
-    font-size: clamp(1.2rem, 4vw, 1.6rem);
-    text-align: center;
-  }
-
-  .elab-card {
-    padding: 20px;
-  }
-
-  .test-case {
-    flex: 1 1 100%;
-  }
-
-  iframe {
-    width: 100%;
-    height: auto;
-  }
-
-  .signature {
-    height: 35px;
-    max-width: 100px;
-  }
-}
-
-@media (max-width: 480px) {
-  header,
-  footer {
-    padding: 1rem;
-  }
-
-  #themeToggle {
-    padding: 0.4rem 0.8rem;
-    font-size: 1rem;
-  }
-
-  .photo img {
-    width: 120px;
-  }
-
-  .details p {
-    font-size: 0.9rem;
-  }
-
-  .section {
-    padding: 2rem 1rem;
-  }
-
-  .nav-links a {
-    font-size: 0.95rem;
-  }
-
-  .full-width {
-    margin: 0.8rem 0;
-  }
-
-  .elab-card h3 {
-    font-size: 20px;
-  }
-
-  .elab-card p,
-  .elab-card li {
-    font-size: 14px;
-  }
-
-  .signature {
-    height: 30px;
-    max-width: 80px;
-  }
-
-  footer {
     flex-direction: column;
-    gap: 0.5rem;
   }
-
-  .srm-link {
-    font-size: 12px;
+  
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   }
-}
-
-.menu-toggle {
-  display: none;
-}
-
+  
+  .project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .project-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .project-content h3 {
+    color: var(--text-color);
+    font-size: 1.4rem;
+    margin: 0;
+  }
+  
+  .project-content p {
+    color: var(--subtext-color);
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  .tech-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .tech-tags span {
+    background-color: #4b6cb733;
+    color: #4b6cb7;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+  
+  .project-link {
+    margin-top: auto;
+    align-self: flex-start;
+    text-decoration: none;
+    color: #182848;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  .project-link:hover {
+    color: #00bfbf;
+  }
+  
+  body.dark-mode .tech-tags span {
+    background-color: #ff980020;
+    color: #ff9800;
+  }
+  
+  body.dark-mode .project-link {
+    color: #ff9800;
+  }
+  
+  body.dark-mode .project-link:hover {
+    color: #ffa733;
+  }
+  
+  #subject.section {
+    background: var(--card-bg);
+    padding: 40px 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    margin: 40px auto;
+    max-width: 900px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  #subject h2 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+  
+  #subject p {
+    font-size: 1rem;
+    color: var(--subtext-color);
+    margin: 0;
+  }
+  
+  #subject .plain-link {
+    color: #4b6cb7;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+  }
+  
+  #subject .plain-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -2px;
+    background-color: #4b6cb7;
+    transition: width 0.3s;
+  }
+  
+  #subject .plain-link:hover {
+    color: #182848;
+  }
+  
+  #subject .plain-link:hover::after {
+    width: 100%;
+  }
+  
+  body.dark-mode #subject {
+    background: var(--card-bg);
+  }
+  
+  body.dark-mode #subject .plain-link {
+    color: #ff9800;
+  }
+  
+  body.dark-mode #subject .plain-link::after {
+    background-color: #ff9800;
+  }
+  

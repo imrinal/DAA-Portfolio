@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mrinal's Portfolio Submission</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="letter-m.png" />
 </head>
 <body>
   <header>
     <nav>
       <div class="logo">Mrinal's Portfolio</div>
-      <button class="menu-toggle" id="menuToggle">&#9776;</button>
       <ul class="nav-links">
         <li><a href="#info">Info</a></li>
         <li><a href="#subject">Subject</a></li>
         <li><a href="#elab">E-Lab</a></li>
+        <li><a href="#project">Projects</a></li>
         <li><a href="#lab">Lab Status</a></li>
         <li><a href="#realworld">Real World</a></li>
         <li><a href="#hots">HOTS</a></li>
@@ -129,9 +130,71 @@
   }
         </code></pre>
       </div>
+      <div class="card elab-card">
+        <h3>Code Description</h3>
+        <p>This solution uses the Sieve of Eratosthenes, a classical algorithm in Design and Analysis of Algorithms (DAA), to efficiently generate all prime numbers up to a fixed limit with time complexity O(n log log n). By precomputing primes, the algorithm answers each test case in constant time O(1), showcasing the use of space-time trade-off and preprocessing to optimize repeated computations in algorithm design.</p>
+     </div>
     </div>
   </section>
 
+  <section id="project" class="projects-section">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="pr1.png" alt="PowerFitness Preview" class="project-image"/>
+        <div class="project-content">
+          <h3>PowerFitness</h3>
+          <p>Fitness Website with modern UI/UX showcasing workouts, goals, and tracking features.</p>
+          <div class="tech-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+          <a href="https://powerfitness.vercel.app/" target="_blank" class="project-link">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="pr2.png" alt="EduPedia Preview" class="project-image"/>
+        <div class="project-content">
+          <h3>EduPedia</h3>
+          <p>Modern EdTech landing page for teachers and learners with responsive layout and call-to-action.</p>
+          <div class="tech-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+          <a href="https://imrinal.github.io/EdTech-Landing-Page/" target="_blank" class="project-link">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <img src="pr3.png" alt="Netflix Clone Preview" class="project-image"/>
+        <div class="project-content">
+          <h3>Netflix Clone</h3>
+          <p>A responsive clone of Netflix homepage, built using HTML, CSS and basic JavaScript.</p>
+          <div class="tech-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+          <a href="https://imrinal.github.io/Netflix-Clone/" target="_blank" class="project-link">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card">
+        <img src="pr4.png" alt="Weather App Preview" class="project-image"/>
+        <div class="project-content">
+          <h3>Weather App</h3>
+          <p>Fetches real-time weather data using APIs and displays temperature, humidity, and more.</p>
+          <div class="tech-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+          <a href="https://imrinal.github.io/Weather-APP/" target="_blank" class="project-link">View Project →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <section id="lab" class="section">
     <h2>Lab Experiment Completion Status</h2>
@@ -145,7 +208,7 @@
 
   <section id="hots" class="section">
     <h2>HOTS Question Solution</h2>
-    <iframe src="realworld.pdf" width="100%" height="500px"></iframe>
+    <iframe src="hots.pdf" width="100%" height="500px"></iframe>
   </section>
 
   <footer>
